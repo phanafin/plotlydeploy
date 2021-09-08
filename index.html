@@ -13,7 +13,7 @@
 
   <body>
 
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="row">
         <div class="col-md-12 jumbotron text-center">
           <h1>Belly Button Biodiversity Dashboard</h1>
@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="bubble">
-        <div class="col-md-5">
+        <div class="col-md-12">
           <div class="panel panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title">Top 10 Bacteria Cultures</h3>
@@ -61,23 +61,24 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div id="gauge"></div>
+      <div class="gauge">
+        <div class="col-md-5">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Top 10 Bacteria Cultures</h3>
+            </div>
+            <div id="gauge" class="panel-body"></div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- <div class="row"> -->
-      <!-- <div class="col-md-12"> -->
-        <!-- <div id="bubble"></div> -->
-      <!-- </div> -->
-    <!-- </div> -->
-    </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12">
         <p>
         <h4>charts</h4>
         </p>
       </div>
-    </div>
+    </div> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="charts.js"></script>
