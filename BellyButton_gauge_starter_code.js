@@ -44,3 +44,30 @@ function buildCharts(sample) {
     Plotly.newPlot();
   });
 }
+
+var gaugeData = [{
+  domain: { x: [0, 1], y: [0, 1] },
+  value: washing_frequency,
+  type: "indicator",
+  mode: "gauge+number",
+  title: { text: "<b> Belly Button Washing Frequency</b> <br> # of Scrubs per</br>" },
+  gauge: {
+    axis: { range: [null, 10], tickwidth: 2, tickcolor: "black" },
+    bar: { color: "black" },
+   steps: [
+     { range: [0, 2], color: "firebrick" },
+      { range: [2, 4], color: "darkorange" },
+      { range: [4, 6], color: "greenyellow" },
+      { range: [6, 8], color: "lightseagreen" },
+      { range: [8, 10], color: "dodgerblue" }
+    ],
+    threshold: {
+      value: washing_frequency,
+    }
+  },
+}];
+var guageLayout = {
+ width: 600, height: 500, margin: { t: 0, b: 0 },
+ font: { color: "black" }
+};
+Plotly.newPlot("gauge", gaugeData, gaugeLayout);
