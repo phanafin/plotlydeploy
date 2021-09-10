@@ -62,6 +62,7 @@ function buildCharts(sample) {
     var samples = data.samples;
     // 4. Create a variable that filters the samples for the object with the desired sample number.
     var resultArray = samples.filter(sampleObj => sampleObj.id == sample);
+    var metadata = data.metadata.filter(sampleObj => sampleObj.id == sample)[0];
     //  5. Create a variable that holds the first sample in the array.
     var result = resultArray[0];
 
@@ -124,7 +125,8 @@ function buildCharts(sample) {
     // }
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
-    var washing_frequency = result.wfreq;
+    var washing_frequency = metadata.wfreq;
+    console.log(washing_frequency)
     var gaugeData = [{
       domain: { x: [0, 1], y: [0, 1] },
       value: washing_frequency,
@@ -147,7 +149,7 @@ function buildCharts(sample) {
       },
     }];
     var guageLayout = {
-     width: 300, height: 250, margin: { t: 0, b: 0 },
+     width: 500, height: 300, margin: { t: 0, b: 0 },
      font: { color: "black" }
     };
     Plotly.newPlot("gauge", gaugeData, guageLayout);
